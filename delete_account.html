@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Deletion - Hilalle</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Noto+Sans+Arabic:wght@400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0F5132;
+            --primary-light: #4ADE80;
+            --bg: #031b0e;
+            --card: rgba(255, 255, 255, 0.05);
+            --text: #ffffff;
+            --text-dim: rgba(255, 255, 255, 0.6);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg);
+            background-image:
+                radial-gradient(circle at 20% 20%, rgba(15, 81, 50, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 80% 80%, rgba(15, 81, 50, 0.1) 0%, transparent 40%);
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            width: 100%;
+            background: var(--card);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            background: var(--primary);
+            border-radius: 20px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo svg {
+            width: 40px;
+            height: 40px;
+            fill: white;
+        }
+
+        h1 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+
+        /* Language Switcher */
+        .lang-switcher {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 30px;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 5px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .lang-btn {
+            padding: 8px 16px;
+            border: none;
+            background: transparent;
+            color: var(--text-dim);
+            cursor: pointer;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 14px;
+        }
+
+        .lang-btn.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Content Sections */
+        .lang-section {
+            display: none;
+        }
+
+        .lang-section.active {
+            display: block;
+        }
+
+        .lang-section[dir="rtl"] {
+            font-family: 'Noto Sans Arabic', sans-serif;
+            text-align: right;
+        }
+
+        h2 {
+            font-size: 18px;
+            font-weight: 600;
+            margin: 20px 0 10px;
+            color: var(--primary-light);
+        }
+
+        ul {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 12px;
+            color: var(--text-dim);
+            font-size: 15px;
+        }
+
+        li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--primary-light);
+            font-weight: bold;
+        }
+
+        [dir="rtl"] li {
+            padding-left: 0;
+            padding-right: 24px;
+        }
+
+        [dir="rtl"] li::before {
+            left: auto;
+            right: 0;
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 16px;
+            border-radius: 14px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+
+        .btn:hover {
+            background: #146c43;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(15, 81, 50, 0.3);
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 13px;
+            color: var(--text-dim);
+        }
+
+        .footer a {
+            color: var(--primary-light);
+            text-decoration: none;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71L12 2z" />
+                </svg>
+            </div>
+            <div class="lang-switcher">
+                <button class="lang-btn active" onclick="setLang('tr')">Türkçe</button>
+                <button class="lang-btn" onclick="setLang('en')">English</button>
+                <button class="lang-btn" onclick="setLang('ar')">العربية</button>
+            </div>
+        </header>
+
+        <!-- TURKISH CONTENT -->
+        <div id="content-tr" class="lang-section active">
+            <h1>Hesap Silme Talebi</h1>
+            <p style="color: var(--text-dim); margin-bottom: 30px;">Verileriniz ve gizliliğiniz bizim için önemlidir.
+            </p>
+
+            <div class="content">
+                <p>Hilalle hesabınızı ve ilişkili verileri silmek istediğiniz için üzgünüz. Talebiniz işleme alındığında
+                    aşağıdaki veriler sistemlerimizden kalıcı olarak temizlenecektir:</p>
+                <ul>
+                    <li>Profil bilgileriniz (E-posta, İsim)</li>
+                    <li>Uygulama üzerindeki kayıtlı tercihleriniz</li>
+                    <li>Üyelik ve yetkilendirme bilgileriniz</li>
+                </ul>
+                <p style="font-size: 14px; color: var(--text-dim); margin-bottom: 20px;">
+                    <strong>Not:</strong> Zikir istatistikleri ve benzeri kullanım verileri sadece cihazınızda (lokal)
+                    tutulduğu için bu verileri uygulama içinden veya uygulamayı silerek kendiniz temizleyebilirsiniz.
+                </p>
+                <h2>Unutmayın:</h2>
+                <p style="font-size: 14px; color: var(--text-dim);">Hesap silme işlemi tamamlandığında mevcut hesabınıza
+                    bir daha erişemezsiniz. İşlem talebiniz bize ulaştıktan sonra 7 iş günü içerisinde tamamlanacaktır.
+                </p>
+            </div>
+            <a href="mailto:hilalleapp@gmail.com?subject=Hesap Silme Talebi&body=Lütfen silmek istediğiniz hesabın e-posta adresini belirtiniz: "
+                class="btn">
+                Silme Talebi Gönder
+            </a>
+        </div>
+
+        <!-- ENGLISH CONTENT -->
+        <div id="content-en" class="lang-section">
+            <h1>Account Deletion Request</h1>
+            <p style="color: var(--text-dim); margin-bottom: 30px;">Your data and privacy are important to us.</p>
+
+            <div class="content">
+                <p>We're sorry to see you go. Once your request is processed, the following data will be permanently
+                    cleared from our systems:</p>
+                <ul>
+                    <li>Profile information (Email, Name)</li>
+                    <li>Your saved preferences in the app</li>
+                    <li>Membership and authorization details</li>
+                </ul>
+                <p style="font-size: 14px; color: var(--text-dim); margin-bottom: 20px;">
+                    <strong>Note:</strong> Dhikr statistics and similar usage data are stored only on your device
+                    (locally). You can clear this data within the app or by deleting the app itself.
+                </p>
+                <h2>Important:</h2>
+                <p style="font-size: 14px; color: var(--text-dim);">Once the account deletion is complete, you will no
+                    longer be able to access your current account. Your request will be completed within 7 business
+                    days.</p>
+            </div>
+            <a href="mailto:hilalleapp@gmail.com?subject=Account Deletion Request&body=Please specify the email address of the account you wish to delete: "
+                class="btn">
+                Send Deletion Request
+            </a>
+        </div>
+
+        <!-- ARABIC CONTENT -->
+        <div id="content-ar" class="lang-section" dir="rtl">
+            <h1>طلب حذف الحساب</h1>
+            <p style="color: var(--text-dim); margin-bottom: 30px;">بياناتك وخصوصيتك مهمة بالنسبة لنا.</p>
+
+            <div class="content">
+                <p>نحن آسفون لرؤيتك ترحل. بمجرد معالجة طلبك، سيتم مسح البيانات التالية نهائيًا من أنظمتنا:</p>
+                <ul>
+                    <li>معلومات الملف الشخصي (البريد الإلكتروني، الاسم)</li>
+                    <li>تفضيلاتك المحفوظة في التطبيق</li>
+                    <li>تفاصيل العضوية والترخيص</li>
+                </ul>
+                <p style="font-size: 14px; color: var(--text-dim); margin-bottom: 20px;">
+                    <strong>ملاحظة:</strong> يتم تخزين إحصائيات الذكر وبيانات الاستخدام المماثلة فقط على جهازك (محليًا).
+                    يمكنك مسح هذه البيانات من داخل التطبيق أو عن طريق حذف التطبيق نفسه.
+                </p>
+                <h2>هام:</h2>
+                <p style="font-size: 14px; color: var(--text-dim);">بمجرد اكتمال حذف الحساب، لن تتمكن بعد الآن من الوصول
+                    إلى حسابك الحالي. سيتم إكمال طلبك في غضون 7 أيام عمل.</p>
+            </div>
+            <a href="mailto:hilalleapp@gmail.com?subject=طلب حذف الحساب&body=يرجى تحديد عنوان البريد الإلكتروني للحساب الذي تريد حذفه: "
+                class="btn">
+                إرسال طلب الحذف
+            </a>
+        </div>
+
+        <div class="footer">
+            Hilalle App &copy; 2024 <br>
+            <a href="https://hilalle.com/privacy-policy">Privacy Policy</a>
+        </div>
+    </div>
+
+    <script>
+        function setLang(lang) {
+            // Hide all sections
+            document.querySelectorAll('.lang-section').forEach(s => s.classList.remove('active'));
+            // Show selected section
+            document.getElementById('content-' + lang).classList.add('active');
+
+            // Update buttons
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+
+</html>
