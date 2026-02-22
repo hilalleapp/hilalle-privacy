@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hilalle - Gizlilik Politikası / Privacy Policy</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <title>Hilalle - Gizlilik Politikası / Privacy Policy / سياسة الخصوصية</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Noto+Sans+Arabic:wght@400;700&display=swap"
+        rel="stylesheet">
     <style>
         :root {
             --primary: #51DBB4;
@@ -27,6 +30,13 @@
             color: var(--text);
             line-height: 1.6;
             padding: 40px 20px;
+            transition: direction 0.3s;
+        }
+
+        /* RTL Support for Arabic */
+        body.ar {
+            font-family: 'Noto Sans Arabic', 'Inter', sans-serif;
+            direction: rtl;
         }
 
         .container {
@@ -122,6 +132,10 @@
             border-radius: 2px;
         }
 
+        body.ar h2::before {
+            order: 2;
+        }
+
         p {
             color: var(--text-secondary);
             font-size: 16px;
@@ -137,17 +151,41 @@
             padding-top: 20px;
         }
 
-        [lang="en"] { display: none; }
-        
-        body.en [lang="tr"] { display: none; }
-        body.en [lang="en"] { display: block; }
+        [lang="en"],
+        [lang="ar"] {
+            display: none;
+        }
+
+        body.en [lang="tr"],
+        body.en [lang="ar"] {
+            display: none;
+        }
+
+        body.en [lang="en"] {
+            display: block;
+        }
+
+        body.ar [lang="tr"],
+        body.ar [lang="en"] {
+            display: none;
+        }
+
+        body.ar [lang="ar"] {
+            display: block;
+        }
 
         @media (max-width: 600px) {
-            h1 { font-size: 24px; }
-            .section { padding: 20px; }
+            h1 {
+                font-size: 24px;
+            }
+
+            .section {
+                padding: 20px;
+            }
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <div class="header">
@@ -156,142 +194,213 @@
             </div>
             <h1 lang="tr">Gizlilik Politikası</h1>
             <h1 lang="en">Privacy Policy</h1>
+            <h1 lang="ar">سياسة الخصوصية</h1>
             <p class="last-updated" lang="tr">Son Güncelleme: 21 Şubat 2026</p>
             <p class="last-updated" lang="en">Last Updated: February 21, 2026</p>
+            <p class="last-updated" lang="ar">آخر تحديث: ٢١ فبراير ٢٠٢٦</p>
         </div>
 
         <div class="lang-switch">
-            <button class="lang-btn active" onclick="setLang('tr')">TR</button>
-            <button class="lang-btn" onclick="setLang('en')">EN</button>
+            <button id="btn-tr" class="lang-btn active" onclick="setLang('tr')">TR</button>
+            <button id="btn-en" class="lang-btn" onclick="setLang('en')">EN</button>
+            <button id="btn-ar" class="lang-btn" onclick="setLang('ar')">AR</button>
         </div>
 
         <!-- INTRO -->
         <div class="section">
             <h2 lang="tr">Giriş</h2>
             <h2 lang="en">Introduction</h2>
-            <p lang="tr">Hilalle uygulaması olarak, kullanıcılarımızın gizliliğine saygı duyuyoruz. Bu Gizlilik Politikası, uygulamayı kullanırken toplanan, kullanılan ve korunan bilgileri açıklamaktadır.</p>
-            <p lang="en">As Hilalle, we respect the privacy of our users. This Privacy Policy explains the information collected, used, and protected while using the application.</p>
+            <h2 lang="ar">المقدمة</h2>
+            <p lang="tr">Hilalle uygulaması olarak, kullanıcılarımızın gizliliğine saygı duyuyoruz. Bu Gizlilik
+                Politikası, uygulamayı kullanırken toplanan, kullanılan ve korunan bilgileri açıklamaktadır.</p>
+            <p lang="en">As Hilalle, we respect the privacy of our users. This Privacy Policy explains the information
+                collected, used, and protected while using the application.</p>
+            <p lang="ar">بصفتنا تطبيق هلاله، نحن نحترم خصوصية مستخدمينا. توضح سياسة الخصوصية هذه المعلومات التي يتم
+                جمعها واستخدامها وحمايتها أثناء استخدام التطبيق.</p>
         </div>
 
         <!-- COLLECTED -->
         <div class="section">
             <h2 lang="tr">Toplanan Bilgiler</h2>
             <h2 lang="en">Information Collected</h2>
+            <h2 lang="ar">المعلومات المجموعة</h2>
             <p lang="tr">Uygulamayı kullanırken aşağıdaki bilgiler toplanabilir:
 
-• Konum Bilgisi: Namaz vakitlerini ve kıble yönünü doğru hesaplamak için kullanılır. Bu bilgi sadece cihazınızda saklanabilir veya hizmet kalitesi için isimsiz olarak kullanılabilir.
-• Kullanıcı Tercihleri: Bildirim ayarları, seçilen şehir ve kişiselleştirme tercihleri.
-• Hesap Bilgileri: Giriş yapmanız durumunda e-posta ve profil bilgileriniz güvenli sunucularımızda saklanır.
-• Cihaz ve Kullanım Verileri: Hata raporları ve performans analizi için cihaz modeli, işletim sistemi sürümü ve uygulama içi etkileşim verileri toplanabilir.</p>
+                • Konum Bilgisi: Namaz vakitlerini ve kıble yönünü doğru hesaplamak için kullanılır. Bu bilgi sadece
+                cihazınızda saklanabilir veya hizmet kalitesi için isimsiz olarak kullanılabilir.
+                • Kullanıcı Tercihleri: Bildirim ayarları, seçilen şehir ve kişiselleştirme tercihleri.
+                • Hesap Bilgileri: Giriş yapmanız durumunda e-posta ve profil bilgileriniz güvenli sunucularımızda
+                saklanır.
+                • Cihaz ve Kullanım Verileri: Hata raporları ve performans analizi için cihaz modeli, işletim sistemi
+                sürümü ve uygulama içi etkileşim verileri toplanabilir.</p>
             <p lang="en">The following information may be collected while using the app:
 
-• Location Information: Used to calculate prayer times and qibla direction accurately.
-• User Preferences: Notification settings, selected city, and personalization preferences.
-• Account Information: If you log in, your email and profile info are stored on our secure servers.
-• Device and Usage Data: Device model, OS version, and in-app interaction data may be collected for crash reports and performance analysis.</p>
+                • Location Information: Used to calculate prayer times and qibla direction accurately.
+                • User Preferences: Notification settings, selected city, and personalization preferences.
+                • Account Information: If you log in, your email and profile info are stored on our secure servers.
+                • Device and Usage Data: Device model, OS version, and in-app interaction data may be collected for
+                crash reports and performance analysis.</p>
+            <p lang="ar">قد يتم جمع المعلومات التالية أثناء استخدام التطبيق:
+
+                • معلومات الموقع: تُستخدم لحساب مواقيت الصلاة واتجاه القبلة بدقة. قد يتم تخزين هذه المعلومات على جهازك
+                فقط أو استخدامها بشكل مجهول لتحسين جودة الخدمة.
+                • تفضيلات المستخدم: إعدادات الإشعارات، المدينة المختارة، وتفضيلات التخصيص.
+                • معلومات الحساب: في حال تسجيل الدخول، يتم تخزين بريدك الإلكتروني ومعلومات ملفك الشخصي على خوادمنا
+                الآمنة.
+                • بيانات الجهاز والاستخدام: قد يتم جمع طراز الجهاز، إصدار نظام التشغيل، وبيانات التفاعل داخل التطبيق
+                لتقارير الأخطاء وتحليل الأداء.</p>
         </div>
 
         <!-- THIRD PARTY -->
         <div class="section">
             <h2 lang="tr">Üçüncü Taraf Hizmetleri</h2>
             <h2 lang="en">Third-Party Services</h2>
-            <p lang="tr">Uygulamamız, hizmet kalitesini artırmak ve reklam sunmak için aşağıdaki üçüncü taraf servislerini kullanmaktadır:
+            <h2 lang="ar">خدمات الطرف الثالث</h2>
+            <p lang="tr">Uygulamamız, hizmet kalitesini artırmak ve reklam sunmak için aşağıdaki üçüncü taraf
+                servislerini kullanmaktadır:
 
-• Google AdMob (Reklamlar)
-• Firebase Analytics & Crashlytics (Analiz ve Hata Takibi)
-• RevenueCat (Abonelik Yönetimi)
+                • Google AdMob (Reklamlar)
+                • Firebase Analytics & Crashlytics (Analiz ve Hata Takibi)
+                • RevenueCat (Abonelik Yönetimi)
 
-Bu servisler kendi gizlilik politikalarına sahiptir. Verileriniz bu servis sağlayıcıların güvenli altyapılarında işlenmektedir.</p>
+                Bu servisler kendi gizlilik politikalarına sahiptir. Verileriniz bu servis sağlayıcıların güvenli
+                altyapılarında işlenmektedir.</p>
             <p lang="en">Our app uses the following third-party services to improve service quality and display ads:
 
-• Google AdMob (Ads)
-• Firebase Analytics & Crashlytics (Analytics and Crash Tracking)
-• RevenueCat (Subscription Management)
+                • Google AdMob (Ads)
+                • Firebase Analytics & Crashlytics (Analytics and Crash Tracking)
+                • RevenueCat (Subscription Management)
 
-These services have their own privacy policies. Your data is processed within the secure infrastructure of these providers.</p>
+                These services have their own privacy policies. Your data is processed within the secure infrastructure
+                of these providers.</p>
+            <p lang="ar">يستخدم تطبيقنا خدمات الطرف الثالث التالية لتحسين جودة الخدمة وتقديم الإعلانات:
+
+                • Google AdMob (الإعلانات)
+                • Firebase Analytics & Crashlytics (التحليل وتتبع الأخطاء)
+                • RevenueCat (إدارة الاشتراكات)
+
+                لهذه الخدمات سياسات خصوصية خاصة بها. يتم معالجة بياناتك ضمن البنية التحتية الآمنة لهؤلاء المزودين.</p>
         </div>
 
         <!-- USAGE -->
         <div class="section">
             <h2 lang="tr">Bilgilerin Kullanımı</h2>
             <h2 lang="en">Use of Information</h2>
+            <h2 lang="ar">استخدام المعلومات</h2>
             <p lang="tr">Bilgileriniz şu amaçlarla kullanılır:
-• Hizmetlerin (vakit, kıble vb.) sunulması
-• Uygulama performansının takibi ve hataların giderilmesi
-• Premium üyelik ve abonelik yönetimi
-• Bildirimlerin gönderilmesi</p>
+                • Hizmetlerin (vakit, kıble vb.) sunulması
+                • Uygulama performansının takibi ve hataların giderilmesi
+                • Premium üyelik ve abonelik yönetimi
+                • Bildirimlerin gönderilmesi</p>
             <p lang="en">Your information is used for:
-• Providing services (times, qibla, etc.)
-• Monitoring app performance and fixing bugs
-• Premium membership and subscription management
-• Sending notifications</p>
+                • Providing services (times, qibla, etc.)
+                • Monitoring app performance and fixing bugs
+                • Premium membership and subscription management
+                • Sending notifications</p>
+            <p lang="ar">تُستخدم معلوماتك من أجل:
+                • تقديم الخدمات (المواقيت، القبلة، إلخ)
+                • مراقبة أداء التطبيق وإصلاح الأخطاء
+                • إدارة العضوية المميرة والاشتراكات
+                • إرسال الإشعارات</p>
         </div>
 
         <!-- SHARING -->
         <div class="section">
             <h2 lang="tr">Bilgi Paylaşımı</h2>
             <h2 lang="en">Information Sharing</h2>
-            <p lang="tr">Kişisel bilgileriniz hiçbir şekilde üçüncü taraflarla paylaşılmaz, satılmaz veya kiralanmaz. Bilgileriniz yalnızca yasal zorunluluklar dahilinde yetkili mercilerle paylaşılabilir.</p>
-            <p lang="en">Your personal information is not shared, sold, or rented to third parties in any way. Your information may only be shared with authorized authorities within the scope of legal obligations.</p>
+            <h2 lang="ar">مشاركة المعلومات</h2>
+            <p lang="tr">Kişisel bilgileriniz hiçbir şekilde üçüncü taraflarla paylaşılmaz, satılmaz veya kiralanmaz.
+                Bilgileriniz yalnızca yasal zorunluluklar dahilinde yetkili mercilerle paylaşılabilir.</p>
+            <p lang="en">Your personal information is not shared, sold, or rented to third parties in any way. Your
+                information may only be shared with authorized authorities within the scope of legal obligations.</p>
+            <p lang="ar">لا يتم مشاركة معلوماتك الشخصية أو بيعها أو تأجيرها لأطراف ثالثة بأي شكل من الأشكال. قد يتم
+                مشاركة معلوماتك فقط مع السلطات المختصة في إطار الالتزامات القانونية.</p>
         </div>
 
         <!-- SECURITY -->
         <div class="section">
             <h2 lang="tr">Veri Güvenliği</h2>
             <h2 lang="en">Data Security</h2>
-            <p lang="tr">Verilerinizin güvenliği için endüstri standardı şifreleme ve güvenlik protokolleri kullanılmaktadır. Hassas bilgileriniz (şifre vb.) asla açık metin olarak saklanmaz.</p>
-            <p lang="en">Industry-standard encryption and security protocols are used for your data security. Your sensitive information (passwords, etc.) is never stored as plain text.</p>
+            <h2 lang="ar">أمن البيانات</h2>
+            <p lang="tr">Verilerinizin güvenliği için endüstri standardı şifreleme ve güvenlik protokolleri
+                kullanılmaktadır. Hassas bilgileriniz (şifre vb.) asla açık metin olarak saklanmaz.</p>
+            <p lang="en">Industry-standard encryption and security protocols are used for your data security. Your
+                sensitive information (passwords, etc.) is never stored as plain text.</p>
+            <p lang="ar">يتم استخدام بروتوكولات التشفير والأمان القياسية في الصناعة لضمان أمن بياناتك. لا يتم تخزين
+                معلوماتك الحساسة (كلمات المرور، إلخ) كنص واضح أبداً.</p>
         </div>
 
         <!-- RETENTION -->
         <div class="section">
             <h2 lang="tr">Veri Saklama Süresi</h2>
             <h2 lang="en">Data Retention</h2>
-            <p lang="tr">Verilerinizi hesabınız aktif olduğu sürece veya size hizmet sağlamak için gerekli olduğu müddetçe saklıyoruz. Silme talebi durumunda verileriniz 30 gün içinde sistemlerimizden kalıcı olarak temizlenir.</p>
-            <p lang="en">We retain your data as long as your account is active or as needed to provide you services. In case of a deletion request, your data is permanently removed from our systems within 30 days.</p>
+            <h2 lang="ar">فترة الاحتفاظ بالبيانات</h2>
+            <p lang="tr">Verilerinizi hesabınız aktif olduğu sürece veya size hizmet sağlamak için gerekli olduğu
+                müddetçe saklıyoruz. Silme talebi durumunda verileriniz 30 gün içinde sistemlerimizden kalıcı olarak
+                temizlenir.</p>
+            <p lang="en">We retain your data as long as your account is active or as needed to provide you services. In
+                case of a deletion request, your data is permanently removed from our systems within 30 days.</p>
+            <p lang="ar">نحن نحتفظ ببياناتك طالما أن حسابك نشط أو حسب الحاجة لتقديم الخدمات لك. في حالة طلب الحذف، يتم
+                إزالة بياناتك نهائياً من أنظمتنا في غضون 30 يوماً.</p>
         </div>
 
         <!-- KIDS -->
         <div class="section">
             <h2 lang="tr">Çocukların Gizliliği</h2>
             <h2 lang="en">Children's Privacy</h2>
-            <p lang="tr">Uygulamamız 13 yaşın altındaki çocuklardan bilerek kişisel bilgi toplamaz. Ebeveynler, çocuklarının uygulamayı kullanımını denetlemelidir.</p>
-            <p lang="en">Our application does not knowingly collect personal information from children under the age of 13. Parents should monitor their children's use of the application.</p>
+            <h2 lang="ar">خصوصية الأطفال</h2>
+            <p lang="tr">Uygulamamız 13 yaşın altındaki çocuklardan bilerek kişisel bilgi toplamaz. Ebeveynler,
+                çocuklarının uygulamayı kullanımını denetlemelidir.</p>
+            <p lang="en">Our application does not knowingly collect personal information from children under the age of
+                13. Parents should monitor their children's use of the application.</p>
+            <p lang="ar">لا يجمع تطبيقنا معلومات شخصية من الأطفال دون سن 13 عاماً عن علم. يجب على أولياء الأمور مراقبة
+                استخدام أطفالهم للتطبيق.</p>
         </div>
 
         <!-- RIGHTS -->
         <div class="section">
             <h2 lang="tr">Haklarınız</h2>
             <h2 lang="en">Your Rights</h2>
-            <p lang="tr">Kullanıcı olarak verilerinize erişme, düzeltme ve silinmesini talep etme hakkına sahipsiniz. Hesabınızı ve tüm verilerinizi 'Ayarlar > Hesabı Sil' menüsü üzerinden dilediğiniz zaman kalıcı olarak silebilirsiniz.</p>
-            <p lang="en">As a user, you have the right to access, correct, and request the deletion of your data. You can permanently delete your account and all data at any time via 'Settings > Delete Account'.</p>
+            <h2 lang="ar">حقوقك</h2>
+            <p lang="tr">Kullanıcı olarak verilerinize erişme, düzeltme ve silinmesini talep etme hakkına sahipsiniz.
+                Hesabınızı ve tüm verilerinizi 'Ayarlar > Hesabı Sil' menüsü üzerinden dilediğiniz zaman kalıcı olarak
+                silebilirsiniz.</p>
+            <p lang="en">As a user, you have the right to access, correct, and request the deletion of your data. You
+                can permanently delete your account and all data at any time via 'Settings > Delete Account'.</p>
+            <p lang="ar">كمستخدم، لديك الحق في الوصول إلى بياناتك وتصحيحها وطلب حذفها. يمكنك حذف حسابك وجميع بياناتك
+                نهائياً في أي وقت عبر قائمة 'الإعدادات > حذف الحساب'.</p>
         </div>
 
         <!-- CONTACT -->
         <div class="section">
             <h2 lang="tr">İletişim</h2>
             <h2 lang="en">Contact</h2>
-            <p lang="tr">Gizlilik politikamız veya kullanım şartlarımız hakkında sorularınız için uygulama içindeki 'Destek ve Geri Bildirim' bölümünden direkt olarak bizimle iletişime geçebilirsiniz.</p>
-            <p lang="en">For any questions about our privacy policy or terms of service, you can contact us directly through the 'Support & Feedback' section within the app.</p>
+            <h2 lang="ar">الاتصال</h2>
+            <p lang="tr">Gizlilik politikamız veya kullanım şartlarımız hakkında sorularınız için uygulama içindeki
+                'Destek ve Geri Bildirim' bölümünden direkt olarak bizimle iletişime geçebilirsiniz.</p>
+            <p lang="en">For any questions about our privacy policy or terms of service, you can contact us directly
+                through the 'Support & Feedback' section within the app.</p>
+            <p lang="ar">لأية أسئلة حول سياسة الخصوصية أو شروط الخدمة الخاصة بنا، يمكنك الاتصال بنا مباشرة من خلال قسم
+                'الدعم والتعليقات' داخل التطبيق.</p>
         </div>
 
         <div class="footer">
-            <p>© 2026 Hilalle. Tüm hakları saklıdır. / All rights reserved.</p>
+            <p>© 2026 Hilalle. Tüm hakları saklıdır. / All rights reserved. / جميع الحقوق محفوظة.</p>
         </div>
     </div>
 
     <script>
         function setLang(lang) {
-            if (lang === 'en') {
-                document.body.classList.add('en');
-            } else {
-                document.body.classList.remove('en');
+            document.body.classList.remove('en', 'ar');
+            if (lang !== 'tr') {
+                document.body.classList.add(lang);
             }
-            
+
             // Update active button
             const btns = document.querySelectorAll('.lang-btn');
             btns.forEach(btn => {
-                if (btn.innerText.toLowerCase() === lang) {
+                const btnId = 'btn-' + lang;
+                if (btn.id === btnId) {
                     btn.classList.add('active');
                 } else {
                     btn.classList.remove('active');
@@ -300,4 +409,5 @@ These services have their own privacy policies. Your data is processed within th
         }
     </script>
 </body>
+
 </html>
