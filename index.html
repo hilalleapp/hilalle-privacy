@@ -1,20 +1,303 @@
 <!DOCTYPE html>
 <html lang="tr">
-<head><meta charset="UTF-8"><title>Hilalle Gizlilik Politikası</title></head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hilalle - Gizlilik Politikası / Privacy Policy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #51DBB4;
+            --bg: #0F0F0F;
+            --card: #1A1A1A;
+            --text: #FFFFFF;
+            --text-secondary: #B0B0B0;
+            --border: rgba(255, 255, 255, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .logo-box {
+            width: 80px;
+            height: 80px;
+            background: var(--card);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            border: 2px solid rgba(81, 219, 180, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .logo-icon {
+            font-size: 40px;
+            color: var(--primary);
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 10px;
+            letter-spacing: -1px;
+        }
+
+        .last-updated {
+            color: var(--primary);
+            font-size: 14px;
+            font-weight: 600;
+            opacity: 0.8;
+        }
+
+        .lang-switch {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 40px;
+        }
+
+        .lang-btn {
+            background: var(--card);
+            border: 1px solid var(--border);
+            color: var(--text);
+            padding: 8px 16px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .lang-btn.active {
+            background: var(--primary);
+            color: #000;
+            border-color: var(--primary);
+        }
+
+        .section {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        h2::before {
+            content: '';
+            display: block;
+            width: 4px;
+            height: 20px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+
+        p {
+            color: var(--text-secondary);
+            font-size: 16px;
+            white-space: pre-line;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            color: var(--text-secondary);
+            font-size: 14px;
+            border-top: 1px solid var(--border);
+            padding-top: 20px;
+        }
+
+        [lang="en"] { display: none; }
+        
+        body.en [lang="tr"] { display: none; }
+        body.en [lang="en"] { display: block; }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 24px; }
+            .section { padding: 20px; }
+        }
+    </style>
+</head>
 <body>
-<h1>Gizlilik Politikası</h1>
-<p>Son güncelleme: Şubat 2026</p>
+    <div class="container">
+        <div class="header">
+            <div class="logo-box">
+                <span class="logo-icon">🌙</span>
+            </div>
+            <h1 lang="tr">Gizlilik Politikası</h1>
+            <h1 lang="en">Privacy Policy</h1>
+            <p class="last-updated" lang="tr">Son Güncelleme: 21 Şubat 2026</p>
+            <p class="last-updated" lang="en">Last Updated: February 21, 2026</p>
+        </div>
 
-<h2>Topladığımız Veriler</h2>
-<p>Hilalle uygulaması; Google veya Facebook ile giriş yapılması durumunda e-posta adresinizi, konum bilginizi (namaz vakitleri için) ve uygulama kullanım verilerini toplar.</p>
+        <div class="lang-switch">
+            <button class="lang-btn active" onclick="setLang('tr')">TR</button>
+            <button class="lang-btn" onclick="setLang('en')">EN</button>
+        </div>
 
-<h2>Verilerin Kullanımı</h2>
-<p>Toplanan veriler yalnızca uygulama işlevlerini sağlamak amacıyla kullanılır. Üçüncü taraflarla satılmaz veya paylaşılmaz.</p>
+        <!-- INTRO -->
+        <div class="section">
+            <h2 lang="tr">Giriş</h2>
+            <h2 lang="en">Introduction</h2>
+            <p lang="tr">Hilalle uygulaması olarak, kullanıcılarımızın gizliliğine saygı duyuyoruz. Bu Gizlilik Politikası, uygulamayı kullanırken toplanan, kullanılan ve korunan bilgileri açıklamaktadır.</p>
+            <p lang="en">As Hilalle, we respect the privacy of our users. This Privacy Policy explains the information collected, used, and protected while using the application.</p>
+        </div>
 
-<h2>Üçüncü Taraf Hizmetler</h2>
-<p>Firebase, Google AdMob ve RevenueCat hizmetlerini kullanmaktayız.</p>
+        <!-- COLLECTED -->
+        <div class="section">
+            <h2 lang="tr">Toplanan Bilgiler</h2>
+            <h2 lang="en">Information Collected</h2>
+            <p lang="tr">Uygulamayı kullanırken aşağıdaki bilgiler toplanabilir:
 
-<h2>İletişim</h2>
-<p>inancdincer@gmail.com</p>
+• Konum Bilgisi: Namaz vakitlerini ve kıble yönünü doğru hesaplamak için kullanılır. Bu bilgi sadece cihazınızda saklanabilir veya hizmet kalitesi için isimsiz olarak kullanılabilir.
+• Kullanıcı Tercihleri: Bildirim ayarları, seçilen şehir ve kişiselleştirme tercihleri.
+• Hesap Bilgileri: Giriş yapmanız durumunda e-posta ve profil bilgileriniz güvenli sunucularımızda saklanır.
+• Cihaz ve Kullanım Verileri: Hata raporları ve performans analizi için cihaz modeli, işletim sistemi sürümü ve uygulama içi etkileşim verileri toplanabilir.</p>
+            <p lang="en">The following information may be collected while using the app:
+
+• Location Information: Used to calculate prayer times and qibla direction accurately.
+• User Preferences: Notification settings, selected city, and personalization preferences.
+• Account Information: If you log in, your email and profile info are stored on our secure servers.
+• Device and Usage Data: Device model, OS version, and in-app interaction data may be collected for crash reports and performance analysis.</p>
+        </div>
+
+        <!-- THIRD PARTY -->
+        <div class="section">
+            <h2 lang="tr">Üçüncü Taraf Hizmetleri</h2>
+            <h2 lang="en">Third-Party Services</h2>
+            <p lang="tr">Uygulamamız, hizmet kalitesini artırmak ve reklam sunmak için aşağıdaki üçüncü taraf servislerini kullanmaktadır:
+
+• Google AdMob (Reklamlar)
+• Firebase Analytics & Crashlytics (Analiz ve Hata Takibi)
+• RevenueCat (Abonelik Yönetimi)
+
+Bu servisler kendi gizlilik politikalarına sahiptir. Verileriniz bu servis sağlayıcıların güvenli altyapılarında işlenmektedir.</p>
+            <p lang="en">Our app uses the following third-party services to improve service quality and display ads:
+
+• Google AdMob (Ads)
+• Firebase Analytics & Crashlytics (Analytics and Crash Tracking)
+• RevenueCat (Subscription Management)
+
+These services have their own privacy policies. Your data is processed within the secure infrastructure of these providers.</p>
+        </div>
+
+        <!-- USAGE -->
+        <div class="section">
+            <h2 lang="tr">Bilgilerin Kullanımı</h2>
+            <h2 lang="en">Use of Information</h2>
+            <p lang="tr">Bilgileriniz şu amaçlarla kullanılır:
+• Hizmetlerin (vakit, kıble vb.) sunulması
+• Uygulama performansının takibi ve hataların giderilmesi
+• Premium üyelik ve abonelik yönetimi
+• Bildirimlerin gönderilmesi</p>
+            <p lang="en">Your information is used for:
+• Providing services (times, qibla, etc.)
+• Monitoring app performance and fixing bugs
+• Premium membership and subscription management
+• Sending notifications</p>
+        </div>
+
+        <!-- SHARING -->
+        <div class="section">
+            <h2 lang="tr">Bilgi Paylaşımı</h2>
+            <h2 lang="en">Information Sharing</h2>
+            <p lang="tr">Kişisel bilgileriniz hiçbir şekilde üçüncü taraflarla paylaşılmaz, satılmaz veya kiralanmaz. Bilgileriniz yalnızca yasal zorunluluklar dahilinde yetkili mercilerle paylaşılabilir.</p>
+            <p lang="en">Your personal information is not shared, sold, or rented to third parties in any way. Your information may only be shared with authorized authorities within the scope of legal obligations.</p>
+        </div>
+
+        <!-- SECURITY -->
+        <div class="section">
+            <h2 lang="tr">Veri Güvenliği</h2>
+            <h2 lang="en">Data Security</h2>
+            <p lang="tr">Verilerinizin güvenliği için endüstri standardı şifreleme ve güvenlik protokolleri kullanılmaktadır. Hassas bilgileriniz (şifre vb.) asla açık metin olarak saklanmaz.</p>
+            <p lang="en">Industry-standard encryption and security protocols are used for your data security. Your sensitive information (passwords, etc.) is never stored as plain text.</p>
+        </div>
+
+        <!-- RETENTION -->
+        <div class="section">
+            <h2 lang="tr">Veri Saklama Süresi</h2>
+            <h2 lang="en">Data Retention</h2>
+            <p lang="tr">Verilerinizi hesabınız aktif olduğu sürece veya size hizmet sağlamak için gerekli olduğu müddetçe saklıyoruz. Silme talebi durumunda verileriniz 30 gün içinde sistemlerimizden kalıcı olarak temizlenir.</p>
+            <p lang="en">We retain your data as long as your account is active or as needed to provide you services. In case of a deletion request, your data is permanently removed from our systems within 30 days.</p>
+        </div>
+
+        <!-- KIDS -->
+        <div class="section">
+            <h2 lang="tr">Çocukların Gizliliği</h2>
+            <h2 lang="en">Children's Privacy</h2>
+            <p lang="tr">Uygulamamız 13 yaşın altındaki çocuklardan bilerek kişisel bilgi toplamaz. Ebeveynler, çocuklarının uygulamayı kullanımını denetlemelidir.</p>
+            <p lang="en">Our application does not knowingly collect personal information from children under the age of 13. Parents should monitor their children's use of the application.</p>
+        </div>
+
+        <!-- RIGHTS -->
+        <div class="section">
+            <h2 lang="tr">Haklarınız</h2>
+            <h2 lang="en">Your Rights</h2>
+            <p lang="tr">Kullanıcı olarak verilerinize erişme, düzeltme ve silinmesini talep etme hakkına sahipsiniz. Hesabınızı ve tüm verilerinizi 'Ayarlar > Hesabı Sil' menüsü üzerinden dilediğiniz zaman kalıcı olarak silebilirsiniz.</p>
+            <p lang="en">As a user, you have the right to access, correct, and request the deletion of your data. You can permanently delete your account and all data at any time via 'Settings > Delete Account'.</p>
+        </div>
+
+        <!-- CONTACT -->
+        <div class="section">
+            <h2 lang="tr">İletişim</h2>
+            <h2 lang="en">Contact</h2>
+            <p lang="tr">Gizlilik politikamız veya kullanım şartlarımız hakkında sorularınız için uygulama içindeki 'Destek ve Geri Bildirim' bölümünden direkt olarak bizimle iletişime geçebilirsiniz.</p>
+            <p lang="en">For any questions about our privacy policy or terms of service, you can contact us directly through the 'Support & Feedback' section within the app.</p>
+        </div>
+
+        <div class="footer">
+            <p>© 2026 Hilalle. Tüm hakları saklıdır. / All rights reserved.</p>
+        </div>
+    </div>
+
+    <script>
+        function setLang(lang) {
+            if (lang === 'en') {
+                document.body.classList.add('en');
+            } else {
+                document.body.classList.remove('en');
+            }
+            
+            // Update active button
+            const btns = document.querySelectorAll('.lang-btn');
+            btns.forEach(btn => {
+                if (btn.innerText.toLowerCase() === lang) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+        }
+    </script>
 </body>
 </html>
